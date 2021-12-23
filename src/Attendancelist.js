@@ -8,7 +8,7 @@ const Attendancelist = () => {
     useEffect(async () => {
         try {
             let attendanceData = await fetch(`https://61c1954e9dbcca0017c81fbb.mockapi.io/api/students/${params.id}`)
-            let attendList = attendanceData.json()
+            let attendList = await attendanceData.json()
             setAttendance(attendList)
         } catch (error) {
             console.log(error);
